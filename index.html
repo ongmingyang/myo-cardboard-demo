@@ -1,11 +1,24 @@
 <html>
 <body>
-hello world
+
+<div class="gameScoreContainer" style="width: 300px; display: block; text-align:center; margin-left: auto; margin-right: auto;">
+	<h2>Your Top Game Scores</h2>
+	<p class="noScoresMsg">You have no game scores yet. =( </p>
+	<ol type="1" class="hidden" id="gameScores">
+	</ol> 
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.3.0.js"></script>
 <script>
   var socket = io.connect('http://ml.polk.in:3000/android');
-  socket.on('sneddata', function (data) {
-    console.log(data);    
+  socket.on('game_scores', function (scores) {
+  	$(".noScoresMsg").hide();
+  	var gameScoreList = $("#gameScores");
+  	for (var i = 0; i < scores.length; i++) {
+  		gameScoreList.append("<li>" + scores[i] + " Points</li>");
+  	}    
+  	gameScoreList.show();
   });
 </script>
 </body>
