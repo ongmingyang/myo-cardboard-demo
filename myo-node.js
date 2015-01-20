@@ -8,6 +8,7 @@ Myo.on('connected', function(){
     myMyo.on('gyroscope', function(data){
         if (data.y > 300){
             var message = "shoot";
+            console.log(message);
             socket.emit('message', message);
         }
     });

@@ -1,0 +1,27 @@
+{
+  "name": "myo-cardboard-demo",
+  "version": "0.1.2",
+  "description": "A sample Node.js app using Express 4",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "socket.io": "~1.3.2",
+    "parse": "~1.3.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ongmingyang/myo-cardboard-demo"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}
