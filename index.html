@@ -8,10 +8,10 @@
 	</ol> 
 </div>
 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="https://cdn.socket.io/socket.io-1.3.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
 <script>
-  var socket = io.connect('http://ml.polk.in:3000/android');
+  var socket = io.connect('http://guarded-sierra-9373.herokuapp.com/android');
   socket.on('game_scores', function (scores) {
   	$(".noScoresMsg").hide();
   	var gameScoreList = $("#gameScores");
@@ -19,6 +19,9 @@
   		gameScoreList.append("<li>" + scores[i] + " Points</li>");
   	}    
   	gameScoreList.show();
+  });
+  socket.on('sneddata', function (data) {
+    console.log(data);
   });
 </script>
 </body>

@@ -35,9 +35,10 @@ var myo_client = io.of('/myo');
 var android_client = io.of('/android');
 
 myo_client.on('connection', function (myo_socket) {
+  console.log("Myo connected.");
   myo_socket.on('message', function (data) {
-    android_client.emit('sneddata', data);
     console.log(data);
+    android_client.emit('sneddata', data);
   });
 });
 
