@@ -12,26 +12,3 @@ Myo.on('connected', function(){
         }
     });
 });
-
-// Myo.on('pose', function(pose_name, edge){
-//     console.log('POSE: ', pose_name);
-//     var message = "shoot";
-//     socket.emit('message', message);
-// });
-
-// var myoID;
-
-// ws.on('message', function(message) {
-//  json = JSON.parse(message);
-//     if (json[0] != "event") {
-//         
-//      return console.log(message);
-//     }
-//     var data = json[1];
-//     if (data.type == "connected") {
-//      myoID = data.myo;
-//     }
-//     if (data.type != "orientation") {
-//         console.log(data)
-//     }
-// });
